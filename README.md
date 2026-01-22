@@ -1,8 +1,8 @@
-# Globe Picker - ETF Country Allocation Visualizer
+# 🌍 Globe Picker - ETF Country Allocation Visualizer
 
 An interactive 3D globe visualization tool for exploring and comparing country allocations across different international ETFs. Built with React, TypeScript, and Vite.
 
-## Features
+## ✨ Features
 
 - **Interactive 3D Globe**: Visualize ETF country allocations on a rotating 3D globe using react-globe.gl
 - **ETF Selection**: Choose from multiple international ETFs (VEU, VXUS, EFA, and more)
@@ -11,7 +11,7 @@ An interactive 3D globe visualization tool for exploring and comparing country a
 - **Compact View**: Toggle between full and compact selector modes for better visibility
 - **Real-time Data**: View current ETF values, changes, and percentage changes
 
-## Supported ETFs
+## 📊 Supported ETFs
 
 The application includes data for several major international ETFs:
 - VEU (Vanguard FTSE All-World ex-US)
@@ -22,7 +22,7 @@ The application includes data for several major international ETFs:
 - IEMG (iShares Core MSCI Emerging Markets)
 - VGK (Vanguard FTSE Europe)
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -53,7 +53,7 @@ npm run build
 npm run preview
 ```
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **React** - UI framework
 - **TypeScript** - Type safety
