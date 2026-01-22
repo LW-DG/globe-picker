@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Globe Picker - ETF Country Allocation Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive 3D globe visualization tool for exploring and comparing country allocations across different international ETFs. Built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive 3D Globe**: Visualize ETF country allocations on a rotating 3D globe using react-globe.gl
+- **ETF Selection**: Choose from multiple international ETFs (VEU, VXUS, EFA, and more)
+- **Compare Mode**: Compare country allocations between two ETFs side-by-side
+- **Country Details**: Hover over countries to view allocation percentages and ETF information
+- **Compact View**: Toggle between full and compact selector modes for better visibility
+- **Real-time Data**: View current ETF values, changes, and percentage changes
 
-## React Compiler
+## Supported ETFs
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application includes data for several major international ETFs:
+- VEU (Vanguard FTSE All-World ex-US)
+- VXUS (Vanguard Total International Stock)
+- EFA (iShares MSCI EAFE)
+- IEFA (iShares Core MSCI EAFE)
+- VWO (Vanguard Emerging Markets)
+- IEMG (iShares Core MSCI Emerging Markets)
+- VGK (Vanguard FTSE Europe)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v16 or higher recommended)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+### Build
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Tech Stack
+
+- **React** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **react-globe.gl** - 3D globe visualization
+- **ESLint** - Code linting
