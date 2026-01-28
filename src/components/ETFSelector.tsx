@@ -1,4 +1,4 @@
-interface ETF {
+type ETF = {
   symbol: string
   name: string
   currentValue: number
@@ -27,10 +27,10 @@ interface ETFSelectorProps {
   onToggleCompact?: () => void
 }
 
-export function ETFSelector({ 
-  etfs, 
-  selectedETF, 
-  onSelectETF, 
+export function ETFSelector({
+  etfs,
+  selectedETF,
+  onSelectETF,
   title = 'Select ETF',
   highlightColor = 'rgba(100, 200, 255, 0.8)',
   isCompareMode = false,
@@ -116,7 +116,7 @@ export function ETFSelector({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ fontWeight: 'bold', fontSize: '14px' }}>{etf.symbol}</div>
                 <div style={{ fontSize: '12px' }}>
-                  <span style={{ 
+                  <span style={{
                     color: etf.change >= 0 ? '#4ade80' : '#f87171'
                   }}>
                     {etf.change >= 0 ? '+' : ''}{etf.changePercent.toFixed(2)}%
@@ -129,7 +129,7 @@ export function ETFSelector({
                 <div style={{ fontSize: '12px', opacity: 0.8, marginTop: '4px' }}>{etf.name}</div>
                 <div style={{ fontSize: '14px', marginTop: '6px' }}>
                   ${etf.currentValue.toFixed(2)}
-                  <span style={{ 
+                  <span style={{
                     marginLeft: '8px',
                     color: etf.change >= 0 ? '#4ade80' : '#f87171'
                   }}>
