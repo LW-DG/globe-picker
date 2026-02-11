@@ -151,7 +151,6 @@ function App() {
         />
       ) : null}
 
-      {/* Country Info Modal */}
       {isShowingCountryInfo ? (
         <CountryInfoCard hoveredCountry={hoveredCountry} />
       ) : null}
