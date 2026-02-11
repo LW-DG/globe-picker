@@ -1,15 +1,5 @@
-type ETF = {
-  symbol: string
-  name: string
-  currentValue: number
-  change: number
-  changePercent: number
-  countryAllocations: Array<{
-    country: string
-    countryCode: string
-    percentage: number
-  }>
-}
+import type { ETF } from "../types"
+
 
 interface ETFSelectorProps {
   etfs: ETF[]
@@ -32,7 +22,7 @@ export function ETFSelector({
   selectedETF,
   onSelectETF,
   title = 'Select ETF',
-  highlightColor = 'rgba(100, 200, 255, 0.8)',
+  highlightColor = 'rgba(139, 92, 246, 0.8)',
   isCompareMode = false,
   showCompareButton = false,
   top = '20px',
@@ -58,13 +48,13 @@ export function ETFSelector({
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
         <h3 style={{ margin: 0, fontSize: '18px' }}>{title}</h3>
         <div style={{ display: 'flex', gap: '8px' }}>
-          {onToggleCompact && (
+          {onToggleCompact ? (
             <button
               onClick={onToggleCompact}
               style={{
                 padding: '6px 12px',
-                background: isCompact ? 'rgba(100, 200, 255, 0.3)' : 'rgba(255, 255, 255, 0.1)',
-                border: isCompact ? '1px solid rgba(100, 200, 255, 0.8)' : '1px solid rgba(255, 255, 255, 0.3)',
+                background: isCompact ? 'rgba(139, 92, 246, 0.3)' : 'rgba(255, 255, 255, 0.1)',
+                border: isCompact ? '1px solid rgba(139, 92, 246, 0.8)' : '1px solid rgba(255, 255, 255, 0.3)',
                 borderRadius: '4px',
                 color: 'white',
                 cursor: 'pointer',
@@ -74,14 +64,14 @@ export function ETFSelector({
             >
               {isCompact ? '⊟' : '⊞'}
             </button>
-          )}
-          {showCompareButton && onToggleCompare && (
+          ) : null}
+          {showCompareButton && onToggleCompare ? (
             <button
               onClick={onToggleCompare}
               style={{
                 padding: '6px 12px',
-                background: isCompareMode ? 'rgba(100, 200, 255, 0.3)' : 'rgba(255, 255, 255, 0.1)',
-                border: isCompareMode ? '1px solid rgba(100, 200, 255, 0.8)' : '1px solid rgba(255, 255, 255, 0.3)',
+                background: isCompareMode ? 'rgba(139, 92, 246, 0.3)' : 'rgba(255, 255, 255, 0.1)',
+                border: isCompareMode ? '1px solid rgba(139, 92, 246, 0.8)' : '1px solid rgba(255, 255, 255, 0.3)',
                 borderRadius: '4px',
                 color: 'white',
                 cursor: 'pointer',
@@ -91,7 +81,7 @@ export function ETFSelector({
             >
               {isCompareMode ? 'Exit Compare' : 'Compare'}
             </button>
-          )}
+          ) : null}
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: isCompact ? '6px' : '10px' }}>

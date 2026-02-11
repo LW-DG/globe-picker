@@ -1,17 +1,5 @@
-export interface CountryAllocation {
-  country: string
-  countryCode: string
-  percentage: number
-}
+import type { ETF } from "../types";
 
-export interface ETF {
-  symbol: string
-  name: string
-  currentValue: number
-  change: number
-  changePercent: number
-  countryAllocations: CountryAllocation[]
-}
 
 export const mockETFs: ETF[] = [
   {
